@@ -1,3 +1,6 @@
+from riddles import riddles, answers
+import random
+
 print('''
 *******************************************************************************
           |                   |                  |                     |
@@ -30,14 +33,15 @@ if answer.casefold() == 'l' or answer.casefold() == 'left':
     print('The woman says "Well done. You may continue on your quest. She encourages you to move with a sharp knife."')
     print("After several hours of walking, you encounter a troll who makes it abundantly clear that you cannot "
           "cross his bridge unless you answer a riddle.")
-    print('Riddle: "The poor have me; the rich need me. Eat me and you will die. What am I?"')
+    index = random.randrange(len(riddles))
+    print(f'Riddle: "{riddles[index]}"')
     answer = input()
-    if answer.casefold() == "nothing":
+    if answers[index] in answer.casefold():
         print('"you are right." says the troll and allows you to march over the bridge.')
         print("Eventually, some time after you have decided that this treasure is more trouble than it's worth"
-              " you spot three doors which collectively take up 100% of the horizon so you must choose one of them.")
+              " you spot three doors which collectively take up 100%\nof the horizon so you must choose one of them.")
         print('Enter "red", "green" or "blue" to decide which door to choose. These aren\'t the colours of the '
-              'doors, but I will know which one you mean. Note: typo means certain death and a valid choice means'
+              'doors, but I will know which one you mean.\nNote: typo means certain death and a valid choice means'
               '66.6666% chance of death. Good luck.')
         answer = input()
         if answer.casefold() == "red" or answer.casefold() == "r":
